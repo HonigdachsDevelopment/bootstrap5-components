@@ -1,0 +1,133 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Override Bootstrap here
+//
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+$body-color: purple;
+$body-bg: #f5f5f5;
+
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "vendor/bootstrap/bootstrap";
+
+// Option 2
+//
+// Import just the styles you need. Note that some stylesheets are required no matter what.
+
+@import "vendor/bootstrap/functions"; // Required
+@import "vendor/bootstrap/variables"; // Required
+@import "vendor/bootstrap/mixins"; // Required
+@import "vendor/bootstrap/root";
+@import "vendor/bootstrap/reboot"; // Required
+@import "vendor/bootstrap/type";
+@import "vendor/bootstrap/images";
+@import "vendor/bootstrap/code";
+@import "vendor/bootstrap/grid";
+@import "vendor/bootstrap/tables";
+@import "vendor/bootstrap/forms";
+@import "vendor/bootstrap/buttons";
+@import "vendor/bootstrap/transitions";
+@import "vendor/bootstrap/dropdown";
+@import "vendor/bootstrap/button-group";
+@import "vendor/bootstrap/input-group"; // Requires forms
+@import "vendor/bootstrap/custom-forms";
+@import "vendor/bootstrap/nav";
+@import "vendor/bootstrap/navbar"; // Requires nav
+@import "vendor/bootstrap/card";
+@import "vendor/bootstrap/breadcrumb";
+@import "vendor/bootstrap/pagination";
+@import "vendor/bootstrap/badge";
+@import "vendor/bootstrap/jumbotron";
+@import "vendor/bootstrap/alert";
+@import "vendor/bootstrap/progress";
+@import "vendor/bootstrap/media";
+@import "vendor/bootstrap/list-group";
+@import "vendor/bootstrap/close";
+@import "vendor/bootstrap/toasts";
+@import "vendor/bootstrap/modal"; // Requires transitions
+@import "vendor/bootstrap/tooltip";
+@import "vendor/bootstrap/popover";
+@import "vendor/bootstrap/carousel";
+@import "vendor/bootstrap/spinners";
+@import "vendor/bootstrap/utilities";
+@import "vendor/bootstrap/print";
+
+@import "pages/landingpage";
+
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: $gray-800;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  //border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: transparentize($light, .75);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
